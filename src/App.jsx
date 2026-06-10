@@ -195,8 +195,8 @@ function ShowcaseHome() {
                   <p>{comp.description}</p>
                 </div>
                 <div className="component-card-bottom">
-                  <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "white" }}>
-                    Launch view
+                  <span style={{ fontSize: "1rem", fontWeight: 700, color: "white" }}>
+                    View
                   </span>
                   <motion.span 
                     className="arrow-link"

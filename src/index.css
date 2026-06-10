@@ -202,7 +202,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 8px 16px;
   border-radius: 8px;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 1rem;
   text-decoration: none;
   cursor: pointer;
   transition: var(--transition-smooth);
@@ -282,7 +282,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .showcase-desc-box p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--color-on-surface-variant);
 }
 
@@ -393,7 +393,6 @@ h1, h2, h3, h4, h5, h6 {
   }
   .back-link-btn {
     padding: 6px 12px;
-    font-size: 0.8rem;
     gap: 4px;
     border-radius: 6px;
   }
