@@ -142,8 +142,20 @@ function ShowcaseHome() {
   return (
     <Box sx={{ minHeight: "100vh", bgcolor: "var(--color-background)", py: { xs: 4, md: 8 }, px: { xs: 2, sm: 4, md: 8 } }}>
       
+      {/* Resume Navigation Link */}
+      <Box sx={{ maxWidth: "1200px", mx: "auto", mb: 4, display: "flex", justifyContent: "flex-start" }}>
+        <motion.a 
+          href="#"
+          className="resume-link-btn"
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.98 }}
+        >
+          <ArrowLeft size={16} /> Back to Resume
+        </motion.a>
+      </Box>
+
       {/* Visual Header */}
-      <Box sx={{ borderBottom: "1px solid var(--color-outline)", pb: 4, mb: 6, maxWidth: "1200px", mx: "auto" }}>
+      <Box sx={{ borderBottom: "1px solid var(--color-outline)", pb: 2.5, mb: 2, maxWidth: "1200px", mx: "auto" }}>
         <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", flexWrap: "wrap", gap: 2 }}>
           <Typography variant="h3" sx={{ fontWeight: 900, letterSpacing: "-0.03em" }}>
             React UI Component
@@ -151,8 +163,7 @@ function ShowcaseHome() {
           <span className="badge" style={{ verticalAlign: "middle" }}>10 Components</span>
         </Box>
         <Typography sx={{ color: "var(--color-on-surface-variant)", mt: 2, maxWidth: "650px", fontSize: "0.95rem" }}>
-          Select any card below to view the interactive component in fullscreen format. 
-          Every view features back controls and GitHub source repository links.
+          Select a card below to view the interactive component in fullscreen format. Every view features GitHub source repository links.
         </Typography>
       </Box>
 
