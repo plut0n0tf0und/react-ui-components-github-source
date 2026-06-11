@@ -50,7 +50,8 @@ const componentsList = [
     category: "Builder Flow",
     icon: Icons.AddNewChart,
     description: "A step-by-step form to add new charts by mapping API columns.",
-    isFullPage: true
+    isFullPage: true,
+    thumbnail: "/thumbnails/thumbnail_addnewchart.png"
   },
   {
     id: "ChartModel",
@@ -58,7 +59,8 @@ const componentsList = [
     category: "Data Visualization",
     icon: Icons.ChartModel,
     description: "Renders different types of graphs like line, bar, pie, and radar.",
-    isFullPage: false
+    isFullPage: false,
+    thumbnail: "/thumbnails/thumbnail_chartmodel.png"
   },
   {
     id: "CustomDropdown",
@@ -66,7 +68,8 @@ const componentsList = [
     category: "Input Control",
     icon: Icons.CustomDropdown,
     description: "A styled dropdown menu with glassmorphism effects.",
-    isFullPage: false
+    isFullPage: false,
+    thumbnail: "/thumbnails/thumbnail_customdropdown.png"
   },
   {
     id: "Dashboard",
@@ -74,7 +77,8 @@ const componentsList = [
     category: "Page Flow",
     icon: Icons.Dashboard,
     description: "A main dashboard page to search and view multiple charts.",
-    isFullPage: true
+    isFullPage: true,
+    thumbnail: "/thumbnails/thumbnail_dashboard.png"
   },
   {
     id: "DeliveryCards",
@@ -82,7 +86,8 @@ const componentsList = [
     category: "Layout Module",
     icon: Icons.DeliveryCards,
     description: "Visual cards showing logistics and delivery details.",
-    isFullPage: false
+    isFullPage: false,
+    thumbnail: "/thumbnails/thumbnail_deliverycards.png"
   },
   {
     id: "Loading",
@@ -90,7 +95,8 @@ const componentsList = [
     category: "Loading Indicator",
     icon: Icons.Loading,
     description: "A fullscreen background loading spinner.",
-    isFullPage: false
+    isFullPage: false,
+    thumbnail: "/thumbnails/thumbnail_loading.png"
   },
   {
     id: "MappingData",
@@ -98,7 +104,8 @@ const componentsList = [
     category: "Data Utility",
     icon: Icons.MappingData,
     description: "A data mapping table selector for configuring chart data.",
-    isFullPage: false
+    isFullPage: false,
+    thumbnail: "/thumbnails/thumbnail_mappingdata.png"
   },
   {
     id: "Modal",
@@ -106,7 +113,8 @@ const componentsList = [
     category: "Feedback Overlay",
     icon: Icons.Modal,
     description: "A reusable modal popup box with transition effects.",
-    isFullPage: false
+    isFullPage: false,
+    thumbnail: "/thumbnails/thumbnail_modal.png"
   },
   {
     id: "ProjectList",
@@ -114,7 +122,8 @@ const componentsList = [
     category: "List Component",
     icon: Icons.ProjectList,
     description: "A navigation component listing user projects.",
-    isFullPage: false
+    isFullPage: false,
+    thumbnail: "/thumbnails/thumbnail_projectlist.png"
   },
   {
     id: "PublishSection",
@@ -122,7 +131,8 @@ const componentsList = [
     category: "Widget Module",
     icon: Icons.PublishSection,
     description: "A panel widget displaying lists of developer resources and ratings.",
-    isFullPage: false
+    isFullPage: false,
+    thumbnail: "/thumbnails/thumbnail_publishsection.png"
   }
 ];
 
@@ -197,26 +207,34 @@ function ShowcaseHome() {
               whileTap={{ scale: 0.98 }}
             >
               <Link to={`/component/${comp.id}`} className="component-card" style={{ height: "100%" }}>
-                <div className="component-card-top">
-                  <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 2 }}>
-                    <Box sx={{ color: "white", opacity: 0.85 }}>{comp.icon}</Box>
-                    <span className="badge">{comp.category}</span>
-                  </Box>
-                  <h3>{comp.title}</h3>
-                  <p>{comp.description}</p>
+                <div className="component-card-image-wrapper">
+                  <img 
+                    src={comp.thumbnail} 
+                    alt={comp.title} 
+                    className="component-card-image" 
+                    loading="lazy"
+                  />
                 </div>
-                <div className="component-card-bottom">
-                  <span style={{ fontSize: "1rem", fontWeight: 700, color: "white" }}>
-                    View
-                  </span>
-                  <motion.span 
-                    className="arrow-link"
-                    variants={{
-                      hover: { x: 5, transition: { type: "spring", stiffness: 300, damping: 10 } }
-                    }}
-                  >
-                    →
-                  </motion.span>
+                <div className="component-card-content">
+                  <div className="component-card-top">
+                    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 2 }}>
+                      <div className="component-card-icon">{comp.icon}</div>
+                      <span className="badge">{comp.category}</span>
+                    </Box>
+                    <h3>{comp.title}</h3>
+                    <p>{comp.description}</p>
+                  </div>
+                  <div className="component-card-bottom">
+                    <span>View</span>
+                    <motion.span 
+                      className="arrow-link"
+                      variants={{
+                        hover: { x: 5, transition: { type: "spring", stiffness: 300, damping: 10 } }
+                      }}
+                    >
+                      →
+                    </motion.span>
+                  </div>
                 </div>
               </Link>
             </motion.div>
